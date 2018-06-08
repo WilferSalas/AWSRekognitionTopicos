@@ -34,3 +34,49 @@ Proyecto para la materia de Topicos Especiales en Telematica con las herramienta
 .
 ## AWS Lambda
 > le permite ejecutar código sin aprovisionar o administrar servidores. AWS Lambda ejecuta su código solo cuando es necesario y escala automáticamente, desde unas pocas solicitudes por día hasta miles por segundo. Solo pagas por el tiempo de cómputo que consumes; no hay cargo cuando tu código no se está ejecutando.
+
+# Instalacion y ejecucion del proyecto
+
+Para ejecutar el proyecto se debe crear un nuevo proyecto en AWS Cloud9. Esto se hace dando click sobre Create environment:
+
+> ![alt text](https://i.imgur.com/TfFZI3Y.png)
+
+Ahora hay que agregar el proyecto a Cloud9 dando click sobre File y luego sobre Upload Local Files... y arrastre la capeta AWSRekognitionTopicos a el recuadro que aparece a continuacion:
+
+> ![alt text](https://i.imgur.com/7uzLo0h.png)
+
+Ahora vaya a la parte inferior de la pantalla y agregue una nueva ejecucion de arranque: 
+
+> ![alt text](https://i.imgur.com/wZAX245.jpg)
+
+En la nueva configuracion de ejecuccion creada en el paso anterior, de click sobre ENV e ingrese las siguentes variables:
+
+> ##### PHOTOS_BUCKET: bucketphotostopicos
+
+> ##### FLASK_SECRET: topicos
+
+> ##### DATABASE_HOST: edx-photos-db.csibdpprrn9n.us-west-2.rds.amazonaws.com
+
+> ##### DATABASE_USER: web_user
+
+> ##### DATABASE_PASSWORD: topicostelematica
+
+> ##### DATABASE_DB_NAME: Photos
+
+> ##### COGNITO_POOL_ID: us-west-2_LpJ4qZpEH
+
+> ##### COGNITO_CLIENT_ID: 44rjqt5gpt1o643hk13v0gm29t
+
+> ##### COGNITO_CLIENT_SECRET: 155dc910huh95us53m85ol5is5boittitf6r4es0g2tq8hg9mkt
+
+> ##### COGNITO_DOMAIN: topicosproject.auth.us-west-2.amazoncognito.com
+
+> ##### BASE_URL: http://localhost:5000
+
+> ![alt text](https://i.imgur.com/t7PPafC.png)
+
+Ejecute el proyecto y en la parte superior de la pantalla de click sobre Share y copie la ip que hay dentro del campo Application.
+
+Por ultimo cree un puente entre la ip y localhost con el siguiente comando dentro de una consola: 
+
+> ssh -i CREDENCIALES(Preguntar por estas).pem ec2-user@ACA_VA_LA_IP_ANTERIOR -L 5000:localhost:5000
