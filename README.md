@@ -80,3 +80,5 @@ Ejecute el proyecto y en la parte superior de la pantalla de click sobre Share y
 Por ultimo cree un puente entre la ip y localhost con el siguiente comando dentro de una consola: 
 
 > ssh -i CREDENCIALES(Preguntar por estas).pem ec2-user@ACA_VA_LA_IP_ANTERIOR -L 5000:localhost:5000
+
+Ahora puede ingresar a http://localhost:5000/
